@@ -25,7 +25,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400; color: #1a1a1a; line-height: 1.6; background: #ffffff; -webkit-font-smoothing: antialiased; }
-  :root { --navy: #1a2e4a; --navy-dark: #0f1e33; --gold: #c9a961; --gold-hover: #b89751; --text: #1a1a1a; --muted: #5a6575; --bg-section: #f7f6f2; --border: #e5e2d9; --wa-green: #25d366; }
+  :root { --navy: #1a2e4a; --navy-dark: #0f1e33; --gold: #b9974f; --gold-hover: #a8843f; --text: #1a1a1a; --muted: #5a6575; --bg-section: #f7f6f2; --border: #e5e2d9; --wa-green: #1faa59; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
   h1, h2, h3 { font-weight: 700; line-height: 1.25; color: var(--navy); margin: 0 0 16px; }
   h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; }
@@ -57,8 +57,12 @@
   .btn-primary:hover { background: var(--gold-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(201,169,97,0.25); }
   .btn-whatsapp { background: var(--wa-green); color: #fff; }
   .btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
-  .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
-  .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--gold); color: var(--gold); }
+  .btn-ghost { background: #fff; color: var(--navy-dark); border: 2px solid #fff; font-weight: 700; box-shadow: 0 6px 16px rgba(0,0,0,0.15); padding: 12px 22px; }
+  .btn-ghost:hover { background: var(--gold); color: #fff; border-color: var(--gold); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(184,151,79,0.35); }
+  .btn-ghost svg { width: 26px; height: 26px; flex-shrink: 0; }
+  .btn-ghost .phone-stack { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.1; gap: 2px; }
+  .btn-ghost .phone-label { font-size: 12px; font-weight: 500; opacity: 0.75; letter-spacing: 0.3px; }
+  .btn-ghost .phone-number { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; direction: ltr; }
   .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
   .hero-trust { display: flex; gap: 28px; margin-top: 40px; flex-wrap: wrap; color: rgba(255,255,255,0.85); font-size: 14px; }
   .hero-trust div { display: flex; align-items: center; gap: 8px; }
@@ -233,13 +237,16 @@
         <h1>העסק מתמודד עם חובות, עיקולים או לחץ מצד נושים?<br><span class="gold">חשוב להבין את האפשרויות לפני שמקבלים החלטות</span></h1>
         <p class="lead">כאשר חובות מצטברים, נפתחים תיקים או מופעל לחץ מצד נושים, קבלת החלטות הופכת מורכבת. פגישה מסודרת מאפשרת לבחון את מצב העסק, להבין את המסלולים המשפטיים האפשריים, ולשקול את הצעד הבא בהתאם לנסיבות.</p>
         <div class="cta-row">
-          <a class="btn btn-whatsapp" href="https://wa.me/972522353355?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%94%20%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%AA%20%D7%94%D7%90%D7%A4%D7%A9%D7%A8%D7%95%D7%99%D7%95%D7%AA%20%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%9E%D7%A6%D7%91%20%D7%94%D7%A2%D7%A1%D7%A7." target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://wa.me/972522353355?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%94%20%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%AA%20%D7%94%D7%90%D7%A4%D7%A9%D7%A8%D7%95%D7%99%D7%95%D7%AA%20%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%9E%D7%A6%D7%91%20%D7%94%D7%A2%D7%A1%D7%A7." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.413zm-8.47 18.297h-.004c-1.784 0-3.533-.479-5.06-1.383l-.362-.215-3.759.98 1.004-3.652-.236-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.455-9.884 9.933-9.884 2.653 0 5.146 1.032 7.02 2.906 1.875 1.874 2.906 4.367 2.905 7.02-.003 5.45-4.455 9.882-9.932 9.882z"/></svg>
             לתיאום שיחה לבחינת האפשרויות
           </a>
           <a class="btn btn-ghost" href="tel:0522353355">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            התקשרות למשרד: 052-235-3355
+            <span class="phone-stack">
+              <small class="phone-label">חייגו אלינו</small>
+              <strong class="phone-number">052-235-3355</strong>
+            </span>
           </a>
         </div>
         <div class="hero-trust">
@@ -509,7 +516,7 @@
     <h2>קבלת תמונה ברורה של המצב יכולה להשפיע על המשך הדרך</h2>
     <p>פנייה לצורך בדיקה מאפשרת להבין את מצב העסק, לבחון את האפשרויות המשפטיות הקיימות, ולהחליט כיצד לפעול בהתאם לנסיבות.</p>
     <div class="cta-row">
-      <a class="btn btn-whatsapp" href="https://wa.me/972522353355?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%94%20%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%AA%20%D7%94%D7%90%D7%A4%D7%A9%D7%A8%D7%95%D7%99%D7%95%D7%AA%20%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%9E%D7%A6%D7%91%20%D7%94%D7%A2%D7%A1%D7%A7." target="_blank" rel="noopener">
+      <a class="btn btn-primary" href="https://wa.me/972522353355?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%94%20%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%AA%20%D7%94%D7%90%D7%A4%D7%A9%D7%A8%D7%95%D7%99%D7%95%D7%AA%20%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%9E%D7%A6%D7%91%20%D7%94%D7%A2%D7%A1%D7%A7." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.413zm-8.47 18.297h-.004c-1.784 0-3.533-.479-5.06-1.383l-.362-.215-3.759.98 1.004-3.652-.236-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.455-9.884 9.933-9.884 2.653 0 5.146 1.032 7.02 2.906 1.875 1.874 2.906 4.367 2.905 7.02-.003 5.45-4.455 9.882-9.932 9.882z"/></svg>
         לתיאום שיחה לבחינת האפשרויות
       </a>
